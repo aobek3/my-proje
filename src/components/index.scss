@@ -1,0 +1,65 @@
+.span{
+    text-align: left;
+    margin-bottom: 0px;
+    color:black;
+    font-size: 20px;
+}
+
+
+.root {
+    width: '50px';
+    margin: 25px 50px 75px 100px;
+    overflow-x: auto;
+  }
+.table{
+    min-width: 100;
+}
+
+.inputStyle{
+    overflow-x: auto;
+}
+.inputForm
+{
+   float: inherit;
+   font-size : 20px;
+   width: 80%;
+}
+.LabelTitle{
+    padding-left: 70px;
+    float:left !important;
+    color:black ;
+    font-size : 20px;
+}
+.p{
+    margin: 25px 50px 75px 100px;
+    color: black;
+}
+
+.h2
+{
+
+   position: relative;
+
+   left: 28px;
+   top: -8px;
+}
+.twist{
+    float: inherit;
+    font-size : 20px;
+    width: 20%;
+    position: relative;
+
+    left: 202px;
+    top: -35px;
+}
+.deneme {  
+  
+    background-color:#ADFF2F;
+    margin: 25px ;
+    width: 95%  
+}
+
+.datePicker{ 
+    display: 'flex';
+    width:200 px;
+}
