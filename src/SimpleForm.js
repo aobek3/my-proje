@@ -6,20 +6,20 @@ import Typography from '@material-ui/core/Typography';
 import DatePicker from './datePicker';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
-
-
-
-
-
+import MaskedInput from 'react-text-mask'
 
 
 
 
 
 const SimpleForm = props => {
-  const { handleSubmit,   } = props;
-  return (  
+  const { handleSubmit, pristine, reset, submitting   } = props;
 
+    
+  
+  return (  
+   
+  
     <form onSubmit={handleSubmit}> 
      <Divider variant="middle" />
     <br></br>
@@ -29,14 +29,21 @@ const SimpleForm = props => {
         <label className="LabelTitle">IBAN:  &nbsp;&nbsp;</label>
         </Grid>
       <Grid item xs={2} sm={4}>
-        <div>
-          <Field
-          className="inputForm"
-            name="IBAN:"
-            component="input"
-            type="text"
-           
-          />
+        <div id="iban">
+        
+             <MaskedInput
+             mask={['T', 'R', /\d/,/\d/, ' ', /\d/, /\d/, /\d/, /\d/,/\d/,' ', /\d/, ' ',/\d/, /\d/, /\d/,/\d/, /\d/, /\d/, /\d/,/\d/,/\d/, /\d/, /\d/,/\d/, /\d/, /\d/, /\d/,/\d/]}
+             className="inputForm"
+             name="IBAN:"
+             guide={false}
+             component="input"
+             type="text"
+             id="my-input-id"
+             onBlur={() => {}}
+             onChange={() => {}}
+             value="TR"
+            
+           />
           </div>
           </Grid>
          </Grid>    
@@ -52,7 +59,7 @@ const SimpleForm = props => {
         <div> 
           <Field
           className="inputForm"
-            name="Alıcının Adı Soyadı:"
+            name="alici"
             component="input"
             type="text"/>
          </div>
@@ -210,7 +217,11 @@ const SimpleForm = props => {
     </div>
     &nbsp;
       <div>
+      <Grid container spacing={12}>
+        <Grid item xs={2}>
         <label className="LabelTitle">Transfer Edilecek Tutar:  &nbsp;&nbsp;</label>
+        </Grid>
+        <Grid item xs={1} sm={1}>
         <div>
           <Field
           className="inputForm"
@@ -220,6 +231,8 @@ const SimpleForm = props => {
            
           />
           </div>
+          </Grid>
+      </Grid>
       </div>
 <DatePicker/>
 &nbsp;
@@ -227,7 +240,7 @@ const SimpleForm = props => {
     
         <Toolbar className="deneme" >
           <Typography  >
-          Transfer Tarih ve Tutar Bilgileri
+       Uyarı
           </Typography>
           
         </Toolbar>
@@ -253,4 +266,5 @@ const SimpleForm = props => {
 
 export default reduxForm({
   form: 'simple', // a unique identifier for this form
+ 
 })(SimpleForm);

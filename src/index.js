@@ -8,6 +8,7 @@ import { reducer as reduxFormReducer } from 'redux-form';
 import {Provider} from 'react-redux';
 
 
+
 const reducer = combineReducers({
     form: reduxFormReducer, // mounted under "form"
   });
@@ -22,6 +23,8 @@ ReactDOM.render(
 </Provider>,
 document.getElementById('root')
 );
+
+
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

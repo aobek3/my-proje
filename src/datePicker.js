@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
+import Grid from '@material-ui/core/Grid';
 
 const styles = theme => ({
   container: {
@@ -19,7 +20,11 @@ function DatePickers(props) {
 
   return (
     <form className={classes.container} noValidate>
+      <Grid container spacing={12}>
+        <Grid item xs={2}>
     <label className="LabelTitle">Transferin Yapılacağı Tarih:  &nbsp;&nbsp;</label>
+    </Grid>
+        <Grid item xs={-5} ></Grid>
       <TextField
         id="date"
         label="Birthday"
@@ -30,6 +35,7 @@ function DatePickers(props) {
           shrink: true,
         }}
       />
+       </Grid>
     </form>
   );
 }
